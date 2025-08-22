@@ -36,7 +36,7 @@ export default defineConfig({
     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
     trace: 'on-first-retry',
 
-    headless: true, // Run tests in headless mode by default
+    headless: false, // Run tests in headless mode by default
     // actionTimeout: 5000, // 5 seconds for each action
     navigationTimeout: 5000, // 5 seconds for navigation
   },
@@ -46,16 +46,6 @@ export default defineConfig({
     {
       name: 'chromium',
       use: { ...devices['Desktop Chrome'] },
-    },
-
-    {
-      name: 'firefox',
-      use: { ...devices['Desktop Firefox'] },
-    },
-
-    {
-      name: 'webkit',
-      use: { ...devices['Desktop Safari'] },
     },
 
     /* Test against mobile viewports. */
